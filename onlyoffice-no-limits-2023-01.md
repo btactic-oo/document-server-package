@@ -6,7 +6,7 @@ This is a complete log of how we managed to bring out the 'No limits' version of
 It's 2023 January and we need to build OnlyOffice 7.2.x.
 The main build_tools is still working on 7.2.x so if we assume the same thing happens with the other repos (master is kept to 7.2.x and not 7.3.x) I might be able to skip having to create a single github organisation to clone all of the onlyoffice repos.
 
-You are also advised to check: `[README-BUILD-DEBIAN-PACKAGE-NO-LIMITS.md](README-BUILD-DEBIAN-PACKAGE-NO-LIMITS.md)` which are more straight-forward build and **use** instructions.
+You are also advised to check: [README-BUILD-DEBIAN-PACKAGE-NO-LIMITS.md](README-BUILD-DEBIAN-PACKAGE-NO-LIMITS.md) which are more straight-forward build and **use** instructions.
 
 ## Initial tasks TODO
 

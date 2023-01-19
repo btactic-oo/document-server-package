@@ -8,7 +8,10 @@ This OnlyOffice Debian package has no limits.
 
 This package is known to work in Debian 11 systems and might also work on other Debian/Ubuntu systems.
 
-If you need a more technical article that covers how we deal with releasing new debian package binaries you can check: [onlyoffice-no-limits-2023-01.md](onlyoffice-no-limits-2023-01.md) .
+If you need more technical articles that cover how we deal with releasing new debian package binaries you can check:
+
+- [onlyoffice-no-limits-2023-01.md](onlyoffice-no-limits-2023-01.md) .
+- [onlyoffice-no-limits-2023-02.md](onlyoffice-no-limits-2023-02.md) .
 
 ## System Base
 
