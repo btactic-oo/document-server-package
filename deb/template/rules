@@ -12,4 +12,4 @@ override_dh_strip:
 	dh_strip -Xdocservice -Xconverter -Xmetrics -Xexample -Xjson -Xcore.node
 
 execute_after_dh_fixperms:
-	chmod o-rwx debian/{{package_sysname}}-documentserver/etc/{{package_sysname}}/documentserver/*.json
+	chmod o-rwx debian/onlyoffice-documentserver/etc/onlyoffice/documentserver/*.json
