@@ -10,8 +10,7 @@ This package is known to work in Debian 11 systems and might also work on other 
 
 If you need more technical articles that cover how we deal with releasing new debian package binaries you can check:
 
-- [onlyoffice-no-limits-2023-01.md](onlyoffice-no-limits-2023-01.md) .
-- [onlyoffice-no-limits-2023-02.md](onlyoffice-no-limits-2023-02.md) .
+- [onlyoffice-no-limits-2023-09.md](onlyoffice-no-limits-2023-09.md) .
 
 ## System Base
 
@@ -53,14 +52,14 @@ cd /root
 git clone \
     --depth=1 \
     --recursive \
-    --branch v7.2.2.56-btactic \
+    --branch v7.4.1.36-btactic \
     https://github.com/btactic/build_tools.git \
     /root/build_tools
 # Ignore detached head warning
 cd /root/build_tools
 mkdir out
 docker build --tag onlyoffice-document-editors-builder .
-docker run -e PRODUCT_VERSION='7.2.2' -e BUILD_NUMBER='56' -e NODE_ENV='production' -v $(pwd)/out:/build_tools/out onlyoffice-document-editors-builder /bin/bash -c 'cd tools/linux && python3 ./automate.py --branch=tags/v7.2.2.56-btactic'
+docker run -e PRODUCT_VERSION='7.4.1' -e BUILD_NUMBER='36' -e NODE_ENV='production' -v $(pwd)/out:/build_tools/out onlyoffice-document-editors-builder /bin/bash -c 'cd tools/linux && python3 ./automate.py --branch=tags/v7.4.1.36-btactic'
 ```
 
 ## Phase 2 - Package DocumentServer Binaries
@@ -81,18 +80,18 @@ deb_dependencies: \$(DEB_DEPS)
 
 EOF
 
-PRODUCT_VERSION='7.2.2' BUILD_NUMBER='56~btactic1' make deb_dependencies
+PRODUCT_VERSION='7.4.1' BUILD_NUMBER='36~btactic2' make deb_dependencies
 cd /root/document-server-package/deb/build
 apt build-dep ./
 # Workaround for installing dependencies - END
 
 cd /root/document-server-package
-PRODUCT_VERSION='7.2.2' BUILD_NUMBER='56~btactic1' make deb
+PRODUCT_VERSION='7.4.1' BUILD_NUMBER='36~btactic2' make deb
 ```
 
 ### Package is built
 
-Package `onlyoffice-documentserver_7.2.2-56~btactic1_amd64.deb` should be found at `/root/document-server-package/deb/` directory.
+Package `onlyoffice-documentserver_7.4.1-36~btactic2_amd64.deb` should be found at `/root/document-server-package/deb/` directory.
 
 ## Usage
 
@@ -104,7 +103,7 @@ However:
 - When asked to install `onlyoffice-documentserver` package do instead:
 
 ```
-sudo apt-get install /path/to/onlyoffice-documentserver_7.2.2-56~btactic1_amd64.deb
+sudo apt install /path/to/onlyoffice-documentserver_7.4.1-36~btactic2_amd64.deb
 ```
 
 ## Developer notes
@@ -146,11 +145,11 @@ docker run -it --entrypoint /bin/bash -v $(pwd)/out:/build_tools/out onlyoffice-
 
 ### Special github repos, branches and tags
 
-- 7.2.2-56-btactic : Use special btactic repos.
-- v7.2.2-56-btactic : Tag for associated release.
-- https://github.com/btactic/build_tools/commits/7.2.2-56-btactic
-- https://github.com/btactic/server/commits/7.2.2-56-btactic
-- https://github.com/btactic/document-server-package/releases/tag/v7.2.2.56-btactic
+- 7.4.1-36-btactic : Use special btactic repos.
+- v7.4.1-36-btactic : Tag for associated release.
+- https://github.com/btactic/build_tools/commits/7.4.1-36-btactic
+- https://github.com/btactic/server/commits/7.4.1-36-btactic
+- https://github.com/btactic/document-server-package/releases/tag/v7.4.1.36-btactic2
 
 ## Warning
 
